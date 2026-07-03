@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f5f5f5;
+}
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+main h2{
+    color: #333;
+    text-transform: capitalize;
+}
+
+.con{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.inquiry-card{
+    width: 350px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    box-shadow: 0 10px 18px rgba(0,0,0,.1);
+    transition: .3s ease;
+}
+
+.inquiry-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,.18);
+}
+
+.inquiry-card h2{
+    color: #222;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+
+.inquiry-card p{
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.inquiry-card p:nth-of-type(2){
+    min-height: 100px;
+}
+
+.inquiry-btn{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.inquiry-btn button{
+    width: 120px;
+    padding: .8rem;
+    border: none;
+    border-radius: 8px;
+    background: #dc3545;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.inquiry-btn button:hover{
+    background: #b02a37;
+}
+
+@media (max-width:768px){
+
+    main{
+        padding: 1rem;
+    }
+
+    .con{
+        gap: 1rem;
+    }
+
+    .inquiry-card{
+        width: 95%;
+        max-width: 400px;
+    }
+
+    .inquiry-btn button{
+        width: 100%;
+    }
+}

@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f5f5f5;
+}
+
+main{
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+main h1{
+    color: #333;
+    text-transform: capitalize;
+}
+
+.con{
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.user-card{
+    width: 320px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    box-shadow: 0 10px 18px rgba(0,0,0,.1);
+    transition: .3s ease;
+}
+
+.user-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,.18);
+}
+
+.user-card h2{
+    color: #222;
+    font-size: 1.4rem;
+    text-transform: capitalize;
+}
+
+.user-card p{
+    color: #555;
+    font-size: 1rem;
+    word-break: break-word;
+}
+
+.user-btn{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-btn button{
+    width: 120px;
+    padding: .8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #dc3545;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.user-btn button:hover{
+    background: #b02a37;
+}
+
+@media (max-width:768px){
+
+    main{
+        padding: 1rem;
+    }
+
+    .con{
+        gap: 1rem;
+    }
+
+    .user-card{
+        width: 95%;
+        max-width: 380px;
+    }
+
+    .user-btn button{
+        width: 100%;
+    }
+}

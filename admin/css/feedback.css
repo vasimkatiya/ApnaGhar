@@ -1,0 +1,124 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+main{
+    width:100%;
+    min-height:calc(100vh - 70px);
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2rem;
+}
+
+main h2{
+    color:#333;
+    text-transform:capitalize;
+}
+
+.con{
+    width:100%;
+    max-width:1300px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1.5rem;
+}
+
+.feedback-card{
+    width:350px;
+    background:#fff;
+    border-radius:12px;
+    padding:1.5rem;
+    display:flex;
+    flex-direction:column;
+    gap:.9rem;
+    box-shadow:0 10px 18px rgba(0,0,0,.1);
+    transition:.3s ease;
+}
+
+.feedback-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 25px rgba(0,0,0,.18);
+}
+
+.feedback-card h2{
+    color:#222;
+    font-size:1.4rem;
+    text-transform:capitalize;
+}
+
+.feedback-card p{
+    color:#555;
+    font-size:1rem;
+    line-height:1.6;
+    word-break:break-word;
+}
+
+.feedback-card p strong{
+    color:#222;
+}
+
+.feedback-card p:nth-of-type(2){
+    color:#0d6efd;
+}
+
+.feedback-card p:nth-of-type(3){
+    min-height:100px;
+}
+
+.feedback-card p:last-of-type{
+    font-size:.9rem;
+    color:#888;
+}
+
+.inquiry-btn{
+    margin-top:1rem;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.inquiry-btn button{
+    width:120px;
+    padding:.8rem;
+    border:none;
+    border-radius:8px;
+    background:#dc3545;
+    color:#fff;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.inquiry-btn button:hover{
+    background:#b02a37;
+}
+
+@media (max-width:768px){
+
+    main{
+        padding:1rem;
+    }
+
+    .con{
+        gap:1rem;
+    }
+
+    .feedback-card{
+        width:95%;
+        max-width:400px;
+    }
+
+    .inquiry-btn button{
+        width:100%;
+    }
+
+}

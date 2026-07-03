@@ -1,0 +1,82 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: #eeeeee;
+    color: #010310;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.con{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-direction: column;
+    min-height: 80vh;
+    width: 100%;
+}
+
+.con .part1 > img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.part2 button{
+    margin-top: 1.3rem;
+    font-size: 1.05rem;
+    color: #eeeeee;
+    text-transform: capitalize;
+    background-color: #0385ff ;
+    padding: 0.7rem 4rem;
+    border-radius: 3rem;
+    border: none;
+    box-shadow: 1px 1px 4px rgba(245, 245, 220, 0.4);
+}
+
+.part2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.part2 button:hover{
+    transition: 0.3s;
+    cursor: pointer;
+    color:rgb(255, 255, 255);
+    background-color: #585858;
+    /* box-shadow: 1px 1px 4px rgba(3, 88, 57, 0.4); */
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .con{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .part1 > img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .btns{
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+}

@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about-con{
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* padding-left: 3rem ; */
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    /* margin: auto; */
+    text-align: center;
+    padding: 2rem 1.3rem;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.353);
+}
+
+h3{
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.about-con p{
+    width: 90%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.about-con p > span{
+   color: #0385ff;
+   font-size: 1.5rem;
+   font-weight: 800;
+}
+
+
+@media (max-width:900px) {
+    .about-con{
+        margin-top: -1.2rem;
+        min-width:90vw;
+    }
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.serv{
+    /* padding-top: 4rem; */
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 6rem;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 1rem 0;
+}
+
+.con{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+ .con > div{
+    width: 400px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    /* margin: auto; */
+    text-align: center;
+    padding: 2rem 1.1rem;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.353);
+    border-radius: 1.2rem;
+}
+
+.line{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 600;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    background-color: #f5f5f5;
+    padding: 0.6rem 1.3rem;
+    height: auto;
+    gap: 1rem;
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.518); */
+}
+
+
+
+.line p div:last-child{
+    margin-top: -0.3rem;
+}
+
+.line > h2{
+    font-size: 3rem;
+}
+
+.line h2 > span{
+    color: #0385ff;
+}
+
+ .con > div p{
+    margin-top: 1rem;
+ }
+
+ .con > div:hover {
+    transition: .6s;
+    background-color: #bcbcbc;
+   
+        transform: translateY(-8px);
+    box-shadow: 0 18px 28px rgba(0,0,0,.18);
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+
+
+@media (max-width:780px) {
+ .con > div{
+    width: 280px;
+ }   
+
+ .line > p{
+
+    font-size: 1.2rem;
+    white-space: nowrap;
+ }
+
+}
