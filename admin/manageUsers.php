@@ -34,6 +34,7 @@ if (!isset($_SESSION['user_id'])) {
                 <li><a href="viewProperties.php">View Properties</a></li>
                 <li><a href="manageUsers.php">Manage Users</a></li>
                 <li><a href="viewInquires.php">View Inquiries</a></li>
+                <li><a href="viewFeed.php">View Feedbacks</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <ul class="nav2">
@@ -41,6 +42,7 @@ if (!isset($_SESSION['user_id'])) {
                 <li><a href="viewProperties.php">View Properties</a></li>
                 <li><a href="manageUsers.php">Manage Users</a></li>
                 <li><a href="viewInquires.php">View Inquiries</a></li>
+                <li><a href="viewFeed.php">View Feedbacks</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>

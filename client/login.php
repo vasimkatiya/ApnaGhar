@@ -63,7 +63,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND role = 'user'");
+        $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND role != 'admin'");
 
         $user = mysqli_fetch_assoc($result);
 

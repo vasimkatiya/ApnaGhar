@@ -6,7 +6,7 @@
 }
 
 body{
-    background: #f4f6f9;
+   background: #242424;
 }
 
 .form-con{
@@ -16,13 +16,13 @@ body{
     background: #fff;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.201);
 }
 
 .form-con h1{
     text-align: center;
     margin-bottom: 2rem;
-    color: #333;
+    color: #161616;
 }
 
 form{
