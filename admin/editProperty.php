@@ -33,6 +33,7 @@ $property = mysqli_fetch_assoc($result);
 
         h2{
             margin-top: 2rem;
+            color:white;
             text-align:center;
         }
 
@@ -65,6 +66,7 @@ $property = mysqli_fetch_assoc($result);
                 <li><a href="viewProperties.php">View Properties</a></li>
                 <li><a href="manageUsers.php">Manage Users</a></li>
                 <li><a href="viewInquires.php">View Inquiries</a></li>
+                <li><a href="viewFeed.php">View Feedbacks</a></li>
                 <li><a href="logout.php">Logout</a></li>
             </ul>
             <ul class="nav2">
