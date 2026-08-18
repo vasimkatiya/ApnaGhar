@@ -238,6 +238,7 @@ nav ul li a:hover{
 }
 
 .footer-box ul li a{
+    text-transform: capitalize;
     text-decoration:none;
     color:#d1d5db;
     transition:.3s;

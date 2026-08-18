@@ -1,148 +1,374 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.about-con{
-    width: 40vw;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    /* padding-left: 3rem ; */
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    /* margin: auto; */
-    text-align: center;
-    padding: 2rem 1.3rem;
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.353);
+body {
+    background: #f5f7fa;
+    color: #1f2937;
 }
 
-h3{
+/* =================================
+   ABOUT SECTION
+================================= */
+
+.about-con {
+    width: min(700px, 90%);
+    margin: 40px auto 0;
+
+    padding: 40px 35px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s ease;
+}
+
+.about-con:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.about-con h3 {
+    font-size: 28px;
+
+    font-weight: 700;
+
     text-transform: uppercase;
-    font-size: 1.6rem;
+
+    letter-spacing: 1px;
+
+    color: #1f2937;
 }
 
-.about-con p{
-    width: 90%;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.about-con p > span{
-   color: #0385ff;
-   font-size: 1.5rem;
-   font-weight: 800;
-}
-
-
-@media (max-width:900px) {
-    .about-con{
-        margin-top: -1.2rem;
-        min-width:90vw;
-    }
-}
-
-h2{
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-.serv{
-    /* padding-top: 4rem; */
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-top: 6rem;
-    align-items: center;
+.about-con p {
     width: 100%;
-    height: auto;
-    padding: 1rem 0;
+    max-width: 600px;
+
+    margin-top: 10px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #555;
 }
 
-.con{
+.about-con p span {
+    color: #0385ff;
+
+    font-size: 20px;
+
+    font-weight: 800;
+}
+
+/* =================================
+   SERVICES SECTION
+================================= */
+
+.serv {
+    width: 100%;
+
+    margin-top: 70px;
+
+    padding: 20px;
+
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+.serv > h2 {
+    font-size: 32px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    color: #1f2937;
+}
+
+.serv > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    background: #0385ff;
+
+    border-radius: 10px;
+}
+
+
+
+.con {
+    width: 100%;
+    max-width: 1200px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
     justify-content: center;
-    gap: 2rem;
     align-items: center;
 }
 
- .con > div{
-    width: 400px;
-    height: 200px;
-    justify-content: center;
+.con > div {
+    min-height: 210px;
+
+    padding: 35px 25px;
+
+    display: flex;
+    flex-direction: column;
+
     align-items: center;
-    gap: 1.5rem;
-    /* margin: auto; */
+    justify-content: center;
+
     text-align: center;
-    padding: 2rem 1.1rem;
-    color: #fff;
+
+    gap: 12px;
+
+    color: #ffffff;
+
     background: #1f2937;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.353);
-    border-radius: 1.2rem;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
 }
 
-.line{
-    margin-top: 3rem;
+.con > div::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #0385ff;
+}
+
+.con > div:hover {
+    transform: translateY(-8px);
+
+    background: #111827;
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+}
+
+.con > div h2 {
+    font-size: 23px;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+.con > div p {
+    margin-top: 5px;
+
+    max-width: 300px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #d1d5db;
+}
+
+.line {
+    width: 100%;
+
+    margin-top: 70px;
+
+    padding: 50px 20px;
+
     display: flex;
     flex-direction: column;
-    width: 100%;
-    font-weight: 600;
+
     align-items: center;
-    justify-content: space-between;
-    font-size: 1.6rem;
-    background-color: #f5f5f5;
-    padding: 0.6rem 1.3rem;
-    height: auto;
-    gap: 1rem;
-    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.518); */
+    justify-content: center;
+
+    gap: 15px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e5e7eb;
+
+    border-bottom: 1px solid #e5e7eb;
 }
 
+.line > h2 {
+    font-size: clamp(28px, 4vw, 48px);
 
+    font-weight: 700;
 
-.line p div:last-child{
-    margin-top: -0.3rem;
+    color: #1f2937;
 }
 
-.line > h2{
-    font-size: 3rem;
-}
-
-.line h2 > span{
+.line > h2 span {
     color: #0385ff;
 }
 
- .con > div p{
-    margin-top: 1rem;
- }
+.line > p {
+    max-width: 700px;
 
- .con > div:hover {
-    transition: .6s;
-        transform: translateY(-8px);
-    box-shadow: 0 18px 28px rgba(0,0,0,.18);
-}
+    font-size: 17px;
 
-h2{
-    font-size: 1.5rem;
+    line-height: 1.7;
+
+    color: #6b7280;
 }
 
 
+@media (max-width: 950px) {
 
-@media (max-width:780px) {
- .con > div{
-    width: 280px;
- }   
+    .about-con {
+        width: 90%;
+    }
 
- .line > p{
+    .con {
+        grid-template-columns: repeat(2, 1fr);
 
-    font-size: 1.2rem;
-    white-space: nowrap;
- }
+        max-width: 800px;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .about-con {
+        width: 92%;
+
+        margin-top: 25px;
+
+        padding: 30px 20px;
+
+        border-radius: 12px;
+    }
+
+    .about-con h3 {
+        font-size: 23px;
+    }
+
+    .about-con p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .about-con p span {
+        font-size: 17px;
+    }
+
+    .serv {
+        margin-top: 50px;
+
+        padding: 15px;
+
+        gap: 25px;
+    }
+
+    .serv > h2 {
+        font-size: 27px;
+    }
+
+    .con {
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        max-width: 450px;
+
+        gap: 18px;
+    }
+
+    .con > div {
+        min-height: 190px;
+
+        padding: 30px 20px;
+    }
+
+    .line {
+        margin-top: 50px;
+
+        padding: 40px 20px;
+    }
+
+    .line > p {
+        font-size: 15px;
+    }
+}
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 400px) {
+
+    .about-con {
+        width: 94%;
+
+        padding: 25px 16px;
+    }
+
+    .about-con h3 {
+        font-size: 20px;
+    }
+
+    .serv > h2 {
+        font-size: 24px;
+    }
+
+    .con > div {
+        min-height: 175px;
+
+        padding: 25px 15px;
+    }
+
+    .con > div h2 {
+        font-size: 20px;
+    }
+
+    .con > div p {
+        font-size: 14px;
+    }
 
 }

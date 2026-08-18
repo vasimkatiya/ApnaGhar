@@ -9,39 +9,11 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['admin_id'])) {
     header("Location: index.php");
     exit();
 }
 
-
-mysqli_query($conn, "CREATE TABLE IF NOT EXISTS properties (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    title VARCHAR(255) NOT NULL,
-    description TEXT,
-    price DECIMAL(10,2) NOT NULL,
-
-    location_id INT NOT NULL,
-
-    type ENUM('rent', 'sale') DEFAULT 'rent',
-
-    address TEXT NOT NULL,
-
-    owner_name VARCHAR(255) NOT NULL,
-    owner_email VARCHAR(255) NOT NULL UNIQUE,
-    owner_phone VARCHAR(20) NOT NULL UNIQUE,
-
-    img_url VARCHAR(500) NOT NULL,
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    CONSTRAINT fk_property_location
-        FOREIGN KEY (location_id)
-        REFERENCES locations(id)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
-);");
 
 mysqli_query($conn, "CREATE TABLE IF NOT EXISTS locations (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -105,6 +77,28 @@ $qry = "INSERT INTO locations (name) VALUES
 ('Chhota Udepur');";
 
 $result = mysqli_query($conn, $qry);
+
+mysqli_query($conn, "CREATE TABLE IF NOT EXISTS properties (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    location_id INT NOT NULL,
+    type ENUM('rent', 'sale') NOT NULL,
+    address TEXT NOT NULL,
+    owner_name VARCHAR(255) NOT NULL,
+    owner_email VARCHAR(255) NOT NULL,
+    owner_phone VARCHAR(20) NOT NULL,
+    img_url VARCHAR(500) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_property_location
+        FOREIGN KEY (location_id)
+        REFERENCES locations(id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);");
+
 
 ?>
 <!DOCTYPE html>

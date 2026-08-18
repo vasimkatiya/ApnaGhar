@@ -64,6 +64,7 @@
                 <li><a href="home.php">home</a></li>
                 <li><a href="rent.php">rent</a></li>
                 <li><a href="sale.php">sale</a></li>
+                <li><a href="myinquiries.php">inquiries</a></li>
                 <li><a href="feedback.php">feedback</a></li>
                 <li><a href="profile.php">profile</a></li>
             </ul>
@@ -75,8 +76,8 @@
     <h2>inquiry</h2>
     <div class="form-con">
       <form action="" method='post' >
-        <input type="text" placeholder='full name' required name="name" id="" class="name">
-        <input type="email" placeholder='example@mail.com' required name="email" id="" class="name">
+        <input type="text" placeholder='full name' name="name" id="" class="name">
+        <input type="email" placeholder='example@mail.com'  name="email" id="" class="name">
         <textarea name="message" placeholder='message...' required maxlength='250' id="" class="name"></textarea>
         <button type="submit">send</button>
       </form>
@@ -100,6 +101,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="rent.php">Rent</a></li>
                 <li><a href="sale.php">sale</a></li>
+                <li><a href="myinquiries.php">inquiries</a></li>
                 <li><a href="feedback.php">Feedback</a></li>
                 <li><a href="profile.php">Profile</a></li>
             </ul>
@@ -146,8 +148,10 @@
 
         if($result){
             echo '<script>alert("send successfully.")</script>';
+            header('Location:myInquiries.php');
         }
     }
+
 ?>
 
 <script src="./js/search.js"></script>

@@ -1,30 +1,12 @@
 <?php
-
     session_start();
+
     if(!isset($_SESSION['user_id']))
         {
             header('Location:home.php');
             exit();
         }
-
-
-require 'db.php';
-
-mysqli_query($conn,"CREATE TABLE IF NOT EXISTS feedback (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-
-    name VARCHAR(100) NOT NULL,
-
-    email VARCHAR(255) NOT NULL UNIQUE,
-
-    message TEXT NOT NULL,
-
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);");
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +15,7 @@ mysqli_query($conn,"CREATE TABLE IF NOT EXISTS feedback (
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApnaGhar-Home</title>
     <link rel="stylesheet" href="./css/nav.css">
-    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/inquiry.css">
 </head>
 <body>
     <div class="navbar">
@@ -63,20 +45,12 @@ mysqli_query($conn,"CREATE TABLE IF NOT EXISTS feedback (
         </nav>
     </header>
 </div>
-    <!-- main section -->
+
 
     <main>
-        <h2>give feedback</h2>
-
-        <div class="form-con">
-            <form action="" method="post" >
-                <input type="text" required placeholder='Full Name' name="name" class="name">
-                <input type="email" name="email" placeHolder="example@email.com" required id="">
-                <textarea name="message" required placeholder="feedback message.." id=""></textarea>
-                <button type="submit">send</button>
-            </form>
+        <div class="con">
+            
         </div>
-
     </main>
         <footer class="footer">
     <div class="footer-container">
@@ -125,30 +99,9 @@ mysqli_query($conn,"CREATE TABLE IF NOT EXISTS feedback (
         <p>&copy; <?php echo date("Y"); ?> ApnaGhar. All Rights Reserved.</p>
     </div>
 </footer>
-   <?php
-
-     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $email = $_POST['email'];
-        $name = $_POST['name'];
-        $msg = $_POST['message'];
-
-        $res = mysqli_query($conn, "INSERT INTO feedback (name,email,message) VALUES('$name','$email','$msg');");
-
-        if($res){
-           
-            echo '<script>alert("feedback send successfully..")</script>';
-                        header('Location:home.php');
-        
-        }else{
-            echo '<script>alert("email are already exists or feedback failed.")</script>';
-            header('Location:feedback.php');
-            exit();
-        }
-
-}
-   ?>
 
 </body>
+<script src="./js/getInquiries.js"></script>
 <script src="./js/search.js"></script>
 <script src="./js/navbar.js"></script>
 </html>

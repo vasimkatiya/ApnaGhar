@@ -40,6 +40,7 @@
                 <li><a href="home.php">home</a></li>
                 <li><a href="rent.php">rent</a></li>
                 <li><a href="sale.php">sale</a></li>
+                <li><a href="myinquiries.php">inquiries</a></li>
                 <li><a href="feedback.php">feedback</a></li>
                 <li><a href="profile.php">profile</a></li>
             </ul>
@@ -122,6 +123,7 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="rent.php">Rent</a></li>
                 <li><a href="sale.php">sale</a></li>
+                <li><a href="myinquiries.php">inquiries</a></li>
                 <li><a href="feedback.php">Feedback</a></li>
                 <li><a href="profile.php">Profile</a></li>
             </ul>

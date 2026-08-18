@@ -3,7 +3,7 @@
 require 'db.php';
 
 session_start();
-if (isset($_SESSION['user_id'])) {
+if (isset($_SESSION['admin_id'])) {
     header("Location: admin.php");
     exit();
 }
@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $user = mysqli_fetch_assoc($result);
 
-        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['admin_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_email'] = $user['email'];
         $_SESSION['user_role'] = $user['role'];

@@ -4,12 +4,46 @@ require 'db.php';
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: index.php");
+header("Content-Type: application/json");
+
+if (!isset($_SESSION['admin_id'])) {
+    http_response_code(401);
+
+    echo json_encode([
+        "error" => "Unauthorized"
+    ]);
+
     exit();
 }
 
-$result = mysqli_query($conn, "select i.message , i.id,i.created_at as date ,u.name , u.email , p.title as property_title from inquiries i join users u on i.user_id = u.id join properties p on i.property_id = p.id");
+$sql = "
+    SELECT 
+        i.message,
+        i.id,
+        i.created_at AS date,
+        u.name,
+        u.phone,
+        u.email,
+        p.title AS property_title,
+        p.owner_phone AS ophone,
+        l.name AS location
+    FROM inquiries i
+    JOIN users u ON i.user_id = u.id
+    JOIN properties p ON i.property_id = p.id
+    JOIN locations l ON l.id = p.location_id
+";
+
+$result = mysqli_query($conn, $sql);
+
+if ($result === false) {
+    http_response_code(500);
+
+    echo json_encode([
+        "error" => mysqli_error($conn)
+    ]);
+
+    exit();
+}
 
 $inquiries = [];
 
@@ -19,4 +53,5 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 echo json_encode($inquiries);
 
+exit();
 ?>

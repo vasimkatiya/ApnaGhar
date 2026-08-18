@@ -1,0 +1,177 @@
+/* ================================
+   INQUIRIES PAGE
+================================ */
+
+main {
+    min-height: 70vh;
+    width: 100%;
+    padding: 50px 20px;
+    text-transform: capitalize;
+}
+
+.con {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* ================================
+   INQUIRY CARD
+================================ */
+
+.inquiry-card {
+    background: #1f2937;
+    border-radius: 12px;
+    padding: 25px;
+    color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.inquiry-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Property title */
+
+.inquiry-card h2 {
+    margin: 0 0 12px;
+
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #fdfdfd;
+}
+
+/* Location */
+
+.inquiry-card p {
+    margin: 8px 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+
+    color: #e6e6e6;
+}
+
+.inquiry-card p strong {
+    color: #b5b0b0;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.btn {
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn button {
+    border: none;
+
+    padding: 9px 18px;
+
+    border-radius: 6px;
+
+    background: #e53935;
+    color: white;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.btn button:hover {
+    background: #c62828;
+    transform: scale(1.03);
+}
+
+.btn button:active {
+    transform: scale(0.97);
+}
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.empty {
+    width: 100%;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    color: #777;
+
+    font-size: 18px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .con {
+        width: 95%;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 30px 15px;
+    }
+
+    .con {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .inquiry-card {
+        padding: 20px;
+    }
+
+    .inquiry-card h2 {
+        font-size: 19px;
+    }
+
+    .inquiry-card p {
+        font-size: 14px;
+    }
+
+    .btn {
+        justify-content: stretch;
+    }
+
+    .btn button {
+        width: 100%;
+    }
+
+}

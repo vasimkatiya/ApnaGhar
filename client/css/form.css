@@ -6,12 +6,11 @@
 }
 
 body{
-    
     background-color: #eeeeee;
 }
 
 main{
-padding: 2rem 0;
+    padding: 2rem 0;
 }
 
 .form-con{
@@ -33,7 +32,7 @@ h2{
 .form-con h1{
     text-align: center;
     text-transform: capitalize;
-    color: #010310;
+    color: #ffffff;
     margin-bottom: 2rem;
 }
 
@@ -53,7 +52,7 @@ h2{
     font-size: 1rem;
     font-weight: 600;
     text-transform: capitalize;
-    color: #010310;
+    color: #eaeaea;
 }
 
 .form-con input,
@@ -92,6 +91,26 @@ h2{
     box-shadow: 0 0 0 3px rgba(3,133,255,.35);
 }
 
+.form-con .form-errors{
+    background-color: rgba(255,0,0,.08);
+    border: 1px solid rgba(255,0,0,.3);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-bottom: .5rem;
+}
+
+.form-con .form-errors ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.form-con .form-errors li{
+    color: #ff6b6b;
+    font-size: .95rem;
+}
+
 .form-con button{
     margin-top: .8rem;
     padding: .9rem;
@@ -110,6 +129,20 @@ h2{
 .form-con button:hover{
     background-color: #585858;
     transform: translateY(-2px);
+}
+
+.form-con button:focus-visible,
+.form-con input:focus-visible,
+.form-con select:focus-visible,
+.form-con textarea:focus-visible{
+    outline: 2px solid #0385ff;
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .form-con button{
+        transition: none;
+    }
 }
 
 @media (max-width:768px){
