@@ -107,6 +107,23 @@
         $phone = $_POST['phone'];
         $password = $_POST['password'];
 
+        $check = "SELECT * FROM users WHERE email = '$email' OR phone = '$phone'";
+        $result = mysqli_query($conn, $check);
+
+        if (mysqli_num_rows($result) > 0) {
+
+         $user = mysqli_fetch_assoc($result);
+
+        if ($user['email'] == $email) {
+             echo '<script>alert("Email is already exists.")</script>';
+            exit;
+        }
+
+        if ($user['phone'] == $phone) {
+            echo '<script>alert("Phone Number is already exists.")</script>';
+            exit;
+        }
+    }
 
         $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 

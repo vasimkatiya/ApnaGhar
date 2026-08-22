@@ -56,39 +56,44 @@
         </div>
     </main>
 
-    <?php
+   <?php
+require 'db.php';
 
-    require 'db.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+    $result = mysqli_query(
+        $conn,
+        "SELECT * FROM users WHERE email = '$email' AND role != 'admin'"
+    );
 
-        $result = mysqli_query($conn, "SELECT * FROM users WHERE email = '$email' AND role != 'admin'");
+    $user = mysqli_fetch_assoc($result);
 
-        $user = mysqli_fetch_assoc($result);
+    if ($user && password_verify($password, $user['password'])) {
 
-        if ($user && password_verify($password, $user['password'])){
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['name'] = $user['name'];
+        $_SESSION['phone'] = $user['phone'];
+        $_SESSION['email'] = $user['email'];
 
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['name'] = $user['name'];
-            $_SESSION['phone'] = $user['phone'];
-            $_SESSION['email'] = $user['email'];
+        echo '<script>
+                alert("Login successful!");
+                window.location.href = "home.php";
+              </script>';
+        exit();
 
-            echo '<script>alert("login successfully.")</script>';
-            header('Location:home.php');
+    } else {
 
-        }else{
-            echo '<script>alert("password or email are incorrect.")</script>';
-            header('Location:login.php');
-            exit();
-        }
-
-
+        echo '<script>
+                alert("Email or password is incorrect!");
+                window.location.href = "login.php";
+              </script>';
+        exit();
     }
-
-    ?>
+}
+?>
 
         <footer class="footer">
     <div class="footer-container">
